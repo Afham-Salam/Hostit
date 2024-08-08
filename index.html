@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="shortcut icon" href="/images/fevicon.png" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/js/bootstrap.js"> -->
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    html{
+        scroll-behavior: smooth;
+    }
+    body{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+ul{
+    list-style: none;
+}
+
+.headersection{
+    background: #00164a;
+    color: white;
+    
+    padding: 10px;
+}
+.nav1{
+  
+    display: flex;
+    justify-content: space-between;
+   
+}
+.logo{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.menuIcon{
+    font-size: 2rem;
+    
+}
+
+.disappear{
+    display: none;
+}
+.heightNone{
+    height: 0;
+}
+
+.navbar{
+   overflow: hidden;
+
+}
+.menuItems {
+    /* display: none; */
+    margin-top: 10px;
+    display: grid;
+    place-items: center;
+    gap: 30px;
+}
+
+.menuItems .links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    font-size: large;
+
+   
+}
+
+.menuItems .links   a {
+        text-decoration: none;
+        color: white;
+    }
+
+.menuItems .contacts{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    font-size: large;
+}
+
+.hero-section{
+    padding-top:10px ;
+    background: #00164a;
+    color: white;
+    padding: 10px;
+    height: 100vh;
+}
+
+
+
+
+.btn-1,.btn-2,.btn-about{
+    width: 110px;
+    height:45px;
+    border-radius: 5px 5px 5px 5px;
+    
+
+}
+.btn-1{
+background-color: #03a7d3;
+color:white;
+border:1px solid #03a7d3 ;
+font-size: 14px;
+
+
+}
+.btn-1:hover{
+    background-color: transparent;
+    color: #3a8da4dc;
+   
+}
+.btn-2,.btn-about{
+    background-color: #ff4646;
+    border:1px solid #ff4646;
+    
+color:white;
+}
+.btn-2:hover,.btn-about:hover{
+   
+    background-color: transparent;
+    color:#ad3535
+}
+.slider-img{
+    margin-top: 20px;
+    width: 300px;
+}
+/* service section*/
+.service{
+    margin-top: 75px;
+
+}
+.service-heading{
+    color:#020230;
+    text-align: center;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 300px 300px 300px ;
+    justify-content: center;
+    padding: 60px;
+    gap: 15px;
+    row-gap: 30px;
+    
+}
+
+
+.grid-container{
+    grid-template-columns: 300px  ;
+    
+
+}
+.grid-item {
+    border:  2px solid rgb(231, 230, 228);
+    padding-top: 20px; 
+  }
+  .logo-box{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 75px;
+    height: 75px;
+    background-color: rgb(3, 167, 211);
+    border-radius: 100%;
+  }
+  .logo-box:hover{
+    background-color: #ff4646;
+  }
+ 
+  .service-icon{
+    width: 70px;
+    padding: 15px;
+
+}
+.deatil-box-para{
+    font-size: 1rem;
+    font-weight: 400;
+    
+}
+h3{
+    font-style: bold;
+}
+.deatil-box-para{
+    color: rgb(89, 87, 87);
+    padding-left: 30px;
+}
+.detail-box{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+a:hover{
+    color: #ff4646;
+}
+
+/* About and server section*/
+.about-section{
+    margin-left: 25px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+
+}
+.about-img{
+    display:block;
+    width: 280px;;
+}
+
+
+
+
+
+.about-para{
+    color:rgb(117, 117, 117)
+
+} 
+.server-section {
+    padding: 50px 30px;
+    background-color:#020230;
+    color: #fff;
+}
+
+.server-container{
+    display: flex;
+    align-items: center;
+    padding-left: 120;
+    gap:30px;
+    
+}
+.server-text{
+    color: rgb(248, 245, 245);
+}
+.server-img{
+    width: 320px;
+} 
+/* Price section */
+#price{
+    margin-top: 40px;
+}
+.pricing-table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.pricing-card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+}
+.pricing-card h2 {
+    margin: 0;
+    font-size: 36px;
+    color: #333;
+}
+
+.pricing-card h3 {
+    margin: 0;
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: center;
+}
+.pricing-card ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.pricing-card button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+  
+}
+.pricing-card:hover,button:hover,.pricing-card h2:hover,.pricing-card h3 :hover{
+    background-color:#03a7d3;
+    color:white;
+}
+
+
+/* Contact section */
+.contact-form{
+   
+   display:flex;
+   /* background: #000; */
+   flex-direction: column;
+   /* width:80%; */
+   place-items:center;
+   gap: 10px;
+}
+.form-title{
+    font-size: 25px;
+}
+.inputbox{
+    width:80%;
+    height:40px;
+}
+.form-button{
+    background-color:#ff4646;
+    border:2px solid dimgray;
+    border-radius: 5px 5px 5px 5px;
+    border: none;
+    color:white;
+    width:60%;
+    height:40px;
+
+}
+
+.form-button:hover{
+    background-color: transparent;
+    border: 2px solid #ff4646; 
+    color:#ff4646
+
+}
+.btn-box{
+    margin-bottom: 35px;
+    /* padding-left: 250px; */
+}
+.contact-section{
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+i:hover{
+    color: #ff4646;
+}
+
+
+
+
+.footer-section{
+   
+    background-color: #020230;
+    color: white;
+    height: 100%; 
+}
+
+.footer-container {
+   
+    display: grid;
+    gap: 20px;
+    
+  
+    
+}
+
+.footer-address,.footer-links, .footer-info, .footer-subscribe,.footer-copyright {
+   
+    text-align: center;
+    margin-top: 30px;
+   
+   
+}
+
+.footer-address .address-items,.footer-subscribe{
+    margin-top: 10px;
+    /* background: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+}
+
+.hr {
+    display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+
+  border-width: 1px;
+  width: 95%;
+
+  height:1.5px;
+  border-width:0;
+
+  background-color:white !important;
+ }
+.Subscribe-form{
+    background-color: transparent;
+    border: none;
+    color: white;
+  
+    border-bottom: 2px solid white;
+    height: 40px;
+    width:250px;
+}
+.Subscribe-btn{
+    height: 40px;
+    width:250px;
+    
+    background-color: #ff4646;
+    color:white;
+
+}
+.Subscribe-btn:hover{
+    color: #ff4646;
+    background-color:transparent;
+    border:1px solid #ff4646;
+} 
+.social{
+    display: flex;
+    gap:15px;
+    font-size: 18px;
+}
+
+@media screen and (max-width:760px) {
+    .server-container{
+       
+       flex-direction: column;
+       text-align: center; 
+}
+}
+
+@media screen and (min-width:1024px) {
+.headersection{
+    display: flex ;
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+    .menuIcon{
+        display: none;
+    }
+
+    .navbar{
+        height: fit-content;
+    }
+
+    .menuItems {
+        display: flex;
+        gap: 35px;
+    }
+    .menuItems .links,.menuItems .contacts{
+        flex-direction: row;
+    } 
+    
+.herosection{
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 25px;
+    margin: 177px;
+    height: 90vh;
+   
+}
+.about-img{
+    width: 550px;
+}
+.inputbox{
+    width:60%;
+    height:50px;
+}
+
+
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .herosection{
+   
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   padding: 25px;
+   margin: 80px;
+  
+}
+  .footer-container{
+    grid-template-columns:auto auto auto auto ;
+   
+
+  }
+  .form-button{
+   width:50px;
+    height:40px;
+  }
+  .titleSetion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .grid-container{
+        grid-template-columns: 300px 300px ;
+  
+}
+  .about-section {
+    margin-top: 40px;
+    flex-direction: row;
+  }
+  .imageSection{
+    display: flex;
+    justify-content: center;
+    
+    
+  }
+
+ 
+}
+
+
+</style>
+<body>
+    <!-- header section -->
+    <header class="headersection">
+        <div class="nav1">
+            <div class="logo">
+             HOSTIT
+            </div> 
+            <div class="menuIcon">
+                     <i id="hamburger" class=" fa-solid fa-bars "></i>
+                     <i id="xmark" class="fa-solid fa-xmark disappear"></i>
+                 </div>
+
+        </div>
+       <nav class="navbar heightNone" id="navbar">
+
+                <div class="menuItems">
+                    <div class="links">
+                        <div><a href="#home">Home</a></div>
+                        <div><a href=#about>About</a></div>
+                        <div><a href="#services">Services</a></div>
+                        <div><a href="#price">Pricing</a></div>
+                        <div><a href="#contact">Contact us</a></div>
+                    </div>
+                    
+                    <div class="contacts">
+                        <div><i class="fa fa-search" aria-hidden="true"></i></div>
+                        <div> CALL : +01 123455678990</div>
+                    </div>
+
+                </div>
+
+
+       </nav>
+    </header>
+
+    <main class="hero-section" id="home">
+        <div class="herosection">
+            <section class="titleSetion">
+                <div>
+               <h1>
+                Fast & Secure
+                Web Hosting
+               </h1> <br>
+               <p>
+
+                   Anything embarrassing hidden in the middle of text. <br>All the Lorem Ipsuanything embarrassing hidden in the middle of text. All the Lorem Ipsumm
+               </p><br>
+               <div class="button-box">
+                <a href="#about"> <button class="btn-1"> Read More</button></a> 
+                 <a href="#getintouch"><button class="btn-2" > Contact Us</button> </a>
+                </div>
+             </div>
+            </section>
+
+            <section class="imageSection">
+                
+                    <img class="slider-img" src="images/slider-img.png" alt="Network error">
+               
+            </section>
+        </div>
+
+    </main>
+    <!-- service section -->
+    <div class="service" id="services" data-aos="fade-up"
+    data-aos-anchor-placement="top-bottom">
+        <h1 class="service-heading">Our Services </h1>
+        <section class="services">
+            <div class="grid-container">
+                <div class="grid-item">
+                   
+                    <div class="detail-box">
+                        <div class="logo-box">
+                            <img  class="service-icon" src="/images/s1.png" alt="">
+                        </div>
+                        <h3>Shared Hosting</h3>
+                        <p class="deatil-box-para">Generators on the Internet tend to 
+                            repeat predefined chunks as necessary</p>
+                        <a href="#">Read More-></a>
+                    </div>
+                </div>
+                <div class="grid-item"> 
+                    <div class="detail-box">
+                    <div class="logo-box">
+                        <img  class="service-icon" src="/images/s2.png" alt="">
+                    </div>
+                    <h4>Dedicated Hosting</h4>
+                    <p class="deatil-box-para">Generators on the Internet tend to 
+                        repeat predefined chunks as necessary</p>
+                    <a href="#">Read More-></a>
+                </div></div>
+                <div class="grid-item">
+                     <div class="detail-box">
+                    <div class="logo-box">
+                        <img  class="service-icon" src="/images/s3.png" alt="">
+                    </div>
+                    <h4>Cloud Hosting</h4>
+                    <p class="deatil-box-para">Generators on the Internet tend to 
+                        repeat predefined chunks as necessary</p>
+                    <a href="#">Read More-></a>
+                </div></div>  
+                <div class="grid-item"> <div class="detail-box">
+                    <div class="logo-box">
+                        <img  class="service-icon" src="/images/s4.png" alt="">
+                    </div>
+                    <h4>VPS Hosting</h4>
+                    <p class="deatil-box-para">Generators on the Internet tend to 
+                        repeat predefined chunks as necessary</p>
+                    <a href="#">Read More-></a>
+                </div></div>
+                <div class="grid-item"> <div class="detail-box">
+                    <div class="logo-box">
+                        <img  class="service-icon" src="/images/s5.png" alt="">
+                    </div>
+                    <h4>Wordpress Hosting</h4>
+                    <p class="deatil-box-para">Generators on the Internet tend to 
+                        repeat predefined chunks as necessary</p>
+                    <a href="#">Read More-></a>
+                </div></div>
+                <div class="grid-item"> <div class="detail-box">
+                    <div class="logo-box">
+                        <img  class="service-icon" src="/images/s6.png" alt="">
+                    </div>
+                    <h4>Domain Name</h4>
+                    <p class="deatil-box-para">Generators on the Internet tend to 
+                        repeat predefined chunks as necessary</p>
+                    <a href="#">Read More-></a>
+                </div></div>  
+              </div>
+
+        </section>
+    </div>
+
+    <!-- About section -->
+       
+    
+    <section id="about" data-aos="fade-up"
+    data-aos-anchor-placement="top-bottom">
+        <div class="about-section">
+            <div>
+
+                <strong style="font-size: 25px;">About Us</strong>
+                <p class="about-para">Words which don't look even slightly <br> believable. If you are going to use a passage of Lorem Ipsum,<br> you need to be sure there isn't anything embarrassing<br> hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks</p>
+               <br> <button class="btn-about"> Read More</button>
+            </div>
+            <div class="about-img-section">
+                <img class="about-img" src="/images/about-img.png" alt="Network error">
+            </div>
+
+
+        </div>
+        
+    </section>
+
+    <!-- server section -->
+     <section class="server-section" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
+        <div class="server-container">
+            <img  class="server-img"src="/images/server-img.jpg">
+            <div class="server-details">
+                <h1 class="server-text">
+                    Let us manage your server</h1>
+                <p class="server-text">Words which don't look even slightly believable. If you are going to use a <br>passage of Lorem Ipsum, you need to be sure there isn't anything<br> embarrassing hidden in the middle of text. All the Lorem Ipsum generators on <br>the Internet tend to repeat predefined chunks</p>
+               <br> <button class="btn-about"> Read More</button>
+            </div>
+            
+
+
+        </div>
+         
+    </section> 
+    
+      <!-- Price section-->
+      <section id="price" >
+
+         
+        <h1 class="service-heading">Our Pricing </h1>
+        <br>
+            <div class="pricing-table">
+                <div class="pricing-card"  data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom">
+                    <h2>$49</h2>
+                    <h3>STARTUP</h3>
+                    <ul>
+                        <li>2GB RAM</li>
+                        <li>20GB SSD Cloud Storage</li>
+                        <li>Weekly Backups</li>
+                        <li>DDoS Protection</li>
+                        <li>Full Root Access</li>
+                        <li>24/7/365 Tech Support</li>
+                    </ul>
+                    <button>See Detail</button>
+                </div>
+            <div class="pricing-table">
+                <div class="pricing-card"  data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom">
+                    <h2>$49</h2>
+                    <h3>STARTUP</h3>
+                    <ul>
+                        <li>2GB RAM</li>
+                        <li>20GB SSD Cloud Storage</li>
+                        <li>Weekly Backups</li>
+                        <li>DDoS Protection</li>
+                        <li>Full Root Access</li>
+                        <li>24/7/365 Tech Support</li>
+                    </ul>
+                    <button>See Detail</button>
+                </div>
+            <div class="pricing-table">
+                <div class="pricing-card"  data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom">
+                    <h2>$49</h2>
+                    <h3>STARTUP</h3>
+                    <ul>
+                        <li>2GB RAM</li>
+                        <li>20GB SSD Cloud Storage</li>
+                        <li>Weekly Backups</li>
+                        <li>DDoS Protection</li>
+                        <li>Full Root Access</li>
+                        <li>24/7/365 Tech Support</li>
+                    </ul>
+                    <button>See Detail</button>
+                </div>
+            </section>
+
+
+
+      
+            <section class="contact-section" id="contact"data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom">
+                
+                <div class="contact-form">
+                    <strong class="form-title">Get in Touch</strong>
+                    <input  class="inputbox" type="text" placeholder="Your Name">
+                    <input class="inputbox" type="text"  placeholder="Your Email">
+                    <input  class="inputbox"type="text"  placeholder="Your Phone">
+                    <input class="inputbox"type="text"  placeholder="Your Message">
+                    <input class="form-button" type="submit" value="Send">
+                </div>
+
+
+            </section>   
+
+
+
+
+      <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-address">
+                <strong>
+                    Address
+                </strong>
+                <div class="address-items">
+                    <div ><i class="fa-solid fa-location-dot"></i>&nbsp; Location</div>
+                    <div><i class="fa-solid fa-phone"></i>&nbsp; Call +01465465456</div>
+                    <div><i class="fa-solid fa-envelope"></i>&nbsp; demo@gmail.com</div>
+                    <div class="social">
+                        <i class="fa-brands fa-facebook" ></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-linkedin" ></i>
+                        <i class="fa-brands fa-github" ></i>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-links">
+                <strong>
+                    Links
+                </strong>
+                <div class="link-items">
+                    <div><i class="fa-solid fa-forward" style="color: #ff4646;"></i><a href="#home">&emsp;Home</a></div>
+                    <div><i class="fa-solid fa-forward"  style="color: #ff4646;"></i><a href=#about>&emsp;About</a></div>
+                    
+                    <div><i class="fa-solid fa-forward"  style="color: #ff4646;"></i><a href="#services">&nbsp;Services</a></div>
+                    
+                    <div><i class="fa-solid fa-forward"  style="color: #ff4646;"></i><a href="#price">&nbsp; Pricing</a></div>
+                    <div><i class="fa-solid fa-forward"  style="color: #ff4646;"></i><a href="#contact">&nbsp;Contact</a></div>
+                </div>
+            </div>
+           
+            <div class="footer-subscribe">
+                <strong>
+                    Subscribe
+                </strong>
+                <input  class="Subscribe-form" placeholder="Enter email" type="email">
+            <input class="Subscribe-btn"type="submit" value="Subscribe">
+            </div>
+            
+
+        </div>
+
+        <hr class="hr">
+
+        <div class="footer-copyright">
+            <p>© 2024 All Rights Reserved By Free Html Templates</p>
+        </div>
+      </footer>      
+         
+</body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
+
+
+<script>
+const xmark = document.getElementById("xmark")
+const hamburger = document.getElementById("hamburger")
+const navbar = document.getElementById("navbar")
+
+
+hamburger.addEventListener("click", () => {
+    // console.log("Hello");
+    hamburger.classList.add("disappear")
+    xmark.classList.remove("disappear")
+
+    navbar.classList.remove("heightNone")
+})
+xmark.addEventListener("click", () => {
+    // console.log("Hello");
+    xmark.classList.add("disappear")
+    hamburger.classList.remove("disappear")
+    navbar.classList.add("heightNone")
+})
+
+
+</script>
+</html>
